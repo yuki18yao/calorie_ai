@@ -3,7 +3,10 @@ import 'package:camera/camera.dart';
 import 'package:flutter/material.dart';
 
 class ScanScreen extends StatefulWidget {
-  const ScanScreen({super.key, required this.camera,});
+  const ScanScreen({
+    super.key,
+    required this.camera,
+  });
 
   final CameraDescription camera;
 
@@ -46,7 +49,7 @@ class ScanScreenState extends State<ScanScreen> {
       // camera preview. Use a FutureBuilder to display a loading spinner until the
       // controller has finished initializing.
       body: FutureBuilder<void>(
-        future: _initializeControllerFuture, 
+        future: _initializeControllerFuture,
         builder: (context, snapshot) {
           if (snapshot.connectionState == ConnectionState.done) {
             // If the Future is complete, display the preview.
@@ -57,7 +60,15 @@ class ScanScreenState extends State<ScanScreen> {
           }
         },
       ),
-      floatingActionButton: FloatingActionButton(
+      floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
+      floatingActionButton: FloatingActionButton.large(
+        shape: RoundedRectangleBorder(
+            side: const BorderSide(
+              width: 4,
+              color: Colors.white,
+            ),
+            borderRadius: BorderRadius.circular(100)),
+        //shape: const CircleBorder(eccentricity: BorderSide.strokeAlignCenter),
         // Provide an onPressed callback.
         onPressed: () async {
           // Take the Picture in a try / catch block. If anything goes wrong,
@@ -77,7 +88,7 @@ class ScanScreenState extends State<ScanScreen> {
               MaterialPageRoute(
                 builder: (context) => EstimationScreen(
                   // Pass the automatically generated path to
-                  // the DisplayPictureScreen widget.
+                  // the EstimationScreen widget.
                   imagePath: image.path,
                 ),
               ),
@@ -87,7 +98,7 @@ class ScanScreenState extends State<ScanScreen> {
             print(e);
           }
         },
-        child: const Icon(Icons.camera_alt),
+        //child: const Icon(Icons.camera_alt),
       ),
     );
   }

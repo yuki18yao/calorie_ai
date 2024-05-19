@@ -42,6 +42,7 @@ class _TabsScreenState extends State<TabsScreen> {
       activePageTitle = 'Tracker';
     }
     if (_selectedPageIndex == 1) {
+      // Added if statement so that the ScanScreen does not receive a null item.
       if (firstCamera != null) {
         activePage = ScanScreen(camera: firstCamera);
       } else {
