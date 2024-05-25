@@ -33,7 +33,7 @@ class EstimationScreen extends StatelessWidget {
               const SizedBox(height: 24),
               Text(
                 'Estimation',
-                style: Theme.of(context).textTheme.headline5!.copyWith(
+                style: Theme.of(context).textTheme.headlineSmall!.copyWith(
                       color: Theme.of(context).colorScheme.primary,
                       fontWeight: FontWeight.bold,
                     ),
@@ -41,14 +41,14 @@ class EstimationScreen extends StatelessWidget {
               const SizedBox(height: 16),
               Text(
                 'OpenAI API texts',
-                style: Theme.of(context).textTheme.bodyText1!.copyWith(
+                style: Theme.of(context).textTheme.bodyLarge!.copyWith(
                       color: Theme.of(context).colorScheme.onSurface,
                     ),
               ),
               const SizedBox(height: 24),
               Text(
                 'List of Ingredients',
-                style: Theme.of(context).textTheme.headline5!.copyWith(
+                style: Theme.of(context).textTheme.headlineSmall!.copyWith(
                       color: Theme.of(context).colorScheme.primary,
                       fontWeight: FontWeight.bold,
                     ),
