@@ -4,8 +4,13 @@ import 'package:flutter/material.dart';
 // A widget that displays the picture taken by the user.
 class EstimationScreen extends StatelessWidget {
   final String imagePath;
+  final String message;
 
-  const EstimationScreen({super.key, required this.imagePath});
+  const EstimationScreen({
+    super.key,
+    required this.imagePath,
+    required this.message,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -40,7 +45,7 @@ class EstimationScreen extends StatelessWidget {
               ),
               const SizedBox(height: 16),
               Text(
-                'OpenAI API texts',
+                message,
                 style: Theme.of(context).textTheme.bodyLarge!.copyWith(
                       color: Theme.of(context).colorScheme.onSurface,
                     ),

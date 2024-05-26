@@ -158,6 +158,7 @@ class ScanScreenState extends State<ScanScreen> {
               MaterialPageRoute(
                 builder: (context) => EstimationScreen(
                   imagePath: image.path,
+                  message: _response,
                 ),
               ),
             );
